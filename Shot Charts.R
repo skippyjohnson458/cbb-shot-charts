@@ -16,7 +16,7 @@ shots <- data |>
 unique(shots$shot_info_shooter_name) #List of all players who have taken shots
 
 shots2 <- shots |>
-  filter(!is.na(shot_info_location_x)) |> #Removes Missing shots
+  filter(!is.na(shot_info_location_x)) |> #Removes Rows with missing shot location data. 
   filter(shot_info_shooter_name == "Alvaro Cardenas") |>
   mutate(
     x_scaled = shot_info_location_x / 10, #Divide by 10 to get feet
